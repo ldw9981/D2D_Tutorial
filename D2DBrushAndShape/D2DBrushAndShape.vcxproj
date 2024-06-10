@@ -129,20 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="D2DBrushAndShape.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="D2DBrushAndShape.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="D2DBrushAndShape.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="D2DBrushAndShape.ico" />
-    <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
