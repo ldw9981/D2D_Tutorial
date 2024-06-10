@@ -130,20 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="D2DDrawText.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="D2DDrawText.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="D2DDrawText.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="D2DDrawText.ico" />
-    <Image Include="small.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
