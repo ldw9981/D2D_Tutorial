@@ -9,17 +9,13 @@
 #pragma comment(lib, "d2d1.lib")
 
 // 윈도우 관련 변수,함수
-HINSTANCE       g_hInst;                                // 현재 인스턴스입니다.
-HWND            g_hWnd;
+HINSTANCE       g_hInst;                    // 인스턴스 핸들
+HWND            g_hWnd;						// 윈도우 핸들
 
-//  D2D 개체 인터페이스 포인터 변수
-ID2D1Factory* g_pD2DFactory;
-
-//무언가 그릴수있는 렌더타겟, 장치 의존 리소스
-ID2D1HwndRenderTarget* g_pRenderTarget;
-
-// 렌더타겟이 생성하는 리소스 역시 장치의존
-ID2D1SolidColorBrush* g_pBlackBrush;
+// Direct2D 관련 변수,함수
+ID2D1Factory* g_pD2DFactory;				//  D2D 개체 인터페이스 포인터 변수
+ID2D1HwndRenderTarget* g_pRenderTarget;		//무언가 그릴수있는 렌더타겟, 장치 의존 리소스
+ID2D1SolidColorBrush* g_pBlackBrush;		// 렌더타겟이 생성하는 리소스 역시 장치의존
 ID2D1SolidColorBrush* g_pGrayBrush;
 
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -39,8 +35,6 @@ BOOL InitDirect2D()
 	hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &g_pD2DFactory);
 	if (FAILED(hr))
 		return FALSE;
-
-
 	/*
 		Direct3D 장치에 바인딩된 리소스를 만듭니다.		
 	*/
@@ -81,9 +75,6 @@ void UninitDirect2D()
 	// COM 사용 끝
 	CoUninitialize();
 }
-
-
-
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
