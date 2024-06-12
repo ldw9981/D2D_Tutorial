@@ -5,9 +5,12 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Character.h"
+#include "TestClass.h"
 
 int main()
 {
+    Character character;
+    TestClass test;
     Player  player;
     Enemy   enemy;
 
