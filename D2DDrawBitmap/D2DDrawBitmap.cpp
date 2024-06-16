@@ -226,21 +226,53 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
             g_pRenderTarget->BeginDraw();
             g_pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
+			g_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity()); // 변환 초기화
 
-            // SetTransform을 사용한다면  기본 단위행렬로 초기 해야한다.
-            g_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
-			D2D1_VECTOR_2F pos{0,0};
-			D2D1_SIZE_F size = g_pD2DBitmap->GetSize();
-			D2D1_RECT_F rect = { pos.x , pos.y, pos.x + size.width*1.5f,pos.y+size.height*1.5f };
-			g_pRenderTarget->DrawBitmap(g_pD2DBitmap, rect);            
+			//1. 0,0 위치에 비트맵 전체영역 그린다. (변환은 초기화)
+			g_pRenderTarget->DrawBitmap(g_pD2DBitmap);						
+
+			//2. DestPos(화면 위치) 설정과 SrcPos(비트맵 위치)로 그리기
+			D2D1_VECTOR_2F DestPos{0,0} , SrcPos{0,0}; // 화면 위치, 비트맵 위치
+			D2D1_SIZE_F size{0,0};	//	그릴 크기
+			D2D1_RECT_F DestRect{ 0,0,0,0 }, SrcRect{ 0,0,0,0 }; // 화면 영역, 비트맵 영역
+			D2D1_MATRIX_3X2_F transform;	// 변환 행렬
+
+			size = g_pD2DBitmap->GetSize();		
+			DestPos = { 300,300 };
+			DestRect = {DestPos.x , DestPos.y, DestPos.x + size.width -1 ,DestPos.y + size.height -1};			
+			g_pRenderTarget->DrawBitmap(g_pD2DBitmap, DestRect);            
             
             
-            g_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Translation(0, 300));
-            g_pRenderTarget->DrawBitmap(g_pD2DBitmap);
-           
+			//3. DestRect(그릴 영역) 설정과 SrcRect(비트맵 일부 영역)로 그리기
+			size = { 100,100 };
+			DestPos = { 600,600 };
+			DestRect = { DestPos.x , DestPos.y, DestPos.x + size.width - 1 ,DestPos.y + size.height - 1 };
 
-            D2D1_MATRIX_3X2_F Matrix = D2D1::Matrix3x2F::Scale(-1.0f, 1.0f, D2D1::Point2F(0, 0));
-            g_pRenderTarget->SetTransform(D2D1::Matrix3x2F::Identity());
+			SrcPos = { 0,0};	
+			SrcRect = { SrcPos.x,SrcPos.y, SrcPos.x + size.width - 1 ,SrcPos.y + size.height - 1 };						
+			g_pRenderTarget->DrawBitmap(g_pD2DBitmap, DestRect,1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR,&SrcRect);
+			
+			
+			//4. 변환을 사용한 반전으로 DestRect(그릴 영역) 설정과 SrcRect(비트맵 일부 영역)로 그리기
+			DestPos = { 800,600 };
+			DestRect = { DestPos.x , DestPos.y, DestPos.x + size.width - 1 ,DestPos.y + size.height - 1 };			
+            
+			transform = D2D1::Matrix3x2F::Scale(-1.0f,1.0f,  // x축 반전
+				D2D1::Point2F(DestPos.x, DestPos.y));        // 기준점
+			g_pRenderTarget->SetTransform(transform);
+			g_pRenderTarget->DrawBitmap(g_pD2DBitmap, DestRect, 1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, &SrcRect);
+
+			//5. 복합변환을 사용한 반전으로 DestRect(그릴 영역) 설정과 SrcRect(비트맵 일부 영역)로 그리기
+			DestPos = { 0,0 };   // 그릴 위치는 0,0으로 하고 이동변환을 사용한다.
+			DestRect = { DestPos.x , DestPos.y, DestPos.x + size.width - 1 ,DestPos.y + size.height - 1 };
+
+			transform = D2D1::Matrix3x2F::Scale(1.0f, 1.0f,D2D1::Point2F(0.0f,0.0f)) * // x축 반전
+				D2D1::Matrix3x2F::Rotation(90.0f, D2D1::Point2F(0.0f, 0.0f)) * // 90도 회전
+				D2D1::Matrix3x2F::Translation(900.0f, 900.0f);
+			// 기준점
+			g_pRenderTarget->SetTransform(transform);
+			g_pRenderTarget->DrawBitmap(g_pD2DBitmap, DestRect, 1.0f, D2D1_BITMAP_INTERPOLATION_MODE_LINEAR, &SrcRect);
+
 
 			g_pRenderTarget->EndDraw();
 		}
