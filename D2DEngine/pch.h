@@ -9,5 +9,14 @@
 
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "framework.h"
+#include <d2d1_1.h>
+#include <d2d1_1helper.h>
+#include <dwrite.h>
+#include <wincodec.h>
+#include <comdef.h>
+#include <d2d1helper.h>
+
+#include <string>
+
 
 #endif //PCH_H
