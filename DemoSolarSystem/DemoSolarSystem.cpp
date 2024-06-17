@@ -1,7 +1,7 @@
 // DemoSolarSystem.cpp : Defines the entry point for the application.
 //
 
-#include "framework.h"
+#include "pch.h"
 #include "DemoSolarSystem.h"
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,

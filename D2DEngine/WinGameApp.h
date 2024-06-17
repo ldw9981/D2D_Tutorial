@@ -9,8 +9,8 @@ public:
 	virtual void Run();
 	virtual void Uninitialize();
 
-	virtual void Update(float fTimeElapsed)=0;
-	virtual void Render()=0;
+	virtual void Update(float fTimeElapsed) {};
+	virtual void Render() {};
 
 	D2DRenderer m_Renderer;
 };

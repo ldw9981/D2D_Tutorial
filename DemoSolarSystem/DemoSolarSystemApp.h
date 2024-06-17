@@ -8,9 +8,9 @@ public:
 	DemoSolarSystemApp();
 	~DemoSolarSystemApp();
 
-	virtual void Initialize() override;
-	virtual void Update(float fTimeElapsed) override;
+	virtual void Initialize() override;	
 	virtual void Render() override;
+	virtual void Update(float fTimeElapsed) override;
 
 	BitmapScene m_Sun;
 	BitmapScene m_Earth;

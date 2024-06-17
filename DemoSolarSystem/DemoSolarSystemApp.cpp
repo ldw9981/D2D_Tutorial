@@ -1,5 +1,6 @@
+#include "pch.h"
 #include "DemoSolarSystemApp.h"
-#include "../D2DEngine/D2DRenderer.h"
+
 
 DemoSolarSystemApp::DemoSolarSystemApp()
 {
