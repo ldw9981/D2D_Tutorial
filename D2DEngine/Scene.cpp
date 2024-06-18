@@ -2,6 +2,16 @@
 #include "Scene.h"
 
 
+Scene::Scene()
+{
+	m_RelativeTransform = m_WorldTransform = D2D1::Matrix3x2F::Identity();
+}
+
+Scene::~Scene()
+{
+
+}
+
 void Scene::UpdateTrasnform()
 {
 	m_RelativeTransform = D2D1::Matrix3x2F::Scale(D2D1::SizeF(m_RelativeScale.x, m_RelativeScale.y)) *

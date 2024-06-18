@@ -1,7 +1,13 @@
 #pragma once
-#include "Scene.h"
+#include "BitmapScene.h"
 class AnimationScene :
-    public Scene
+    public BitmapScene
 {
+public:
+	AnimationScene();
+	virtual ~AnimationScene();
+
+	void Update(float fTimeElapsed);
+	void Render(ID2D1HwndRenderTarget* pRenderTarget);
 };
 

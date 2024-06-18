@@ -2,8 +2,8 @@
 class Scene
 {
 public:
-	Scene() {};
-	virtual ~Scene() {};
+	Scene();
+	virtual ~Scene();
 
 public:
 	Scene* m_pParentScene = nullptr;		// 부모 Scene 컴포넌트	
