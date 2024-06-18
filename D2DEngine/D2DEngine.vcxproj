@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationScene.h" />
     <ClInclude Include="BitmapScene.h" />
     <ClInclude Include="D2DRenderer.h" />
     <ClInclude Include="framework.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="WinGameApp.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationScene.cpp" />
     <ClCompile Include="BitmapScene.cpp" />
     <ClCompile Include="D2DEngine.cpp" />
     <ClCompile Include="D2DRenderer.cpp" />

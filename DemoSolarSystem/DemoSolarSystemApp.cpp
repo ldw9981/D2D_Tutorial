@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "DemoSolarSystemApp.h"
+#include "../D2DEngine/BitmapScene.h"
 
 
 DemoSolarSystemApp::DemoSolarSystemApp()
@@ -27,7 +28,9 @@ void DemoSolarSystemApp::Update(float fTimeElapsed)
 	// BitmapScene World Transform 업데이트
 }
 
-void DemoSolarSystemApp::Render()
+void DemoSolarSystemApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
 {
 	// 이후에 할일을 작성한다. 예 게임 렌더링
+	m_Sun.Render(pRenderTarget);
+	
 }

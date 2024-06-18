@@ -10,7 +10,7 @@ public:
 	virtual void Uninitialize();
 
 	virtual void Update(float fTimeElapsed) {};
-	virtual void Render() {};
+	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);
 
 	D2DRenderer m_Renderer;
 };

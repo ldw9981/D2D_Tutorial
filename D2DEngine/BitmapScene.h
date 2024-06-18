@@ -16,6 +16,7 @@ public:
 	ID2D1Bitmap* m_pBitmap = nullptr;
 
 	void Update(float fTimeElapsed);
+	void Render(ID2D1HwndRenderTarget* pRenderTarget);
 };
 
 

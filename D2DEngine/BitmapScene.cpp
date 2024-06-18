@@ -26,3 +26,10 @@ void BitmapScene::Update(float fTimeElapsed)
 	UpdateTrasnform();
 }
 
+void BitmapScene::Render(ID2D1HwndRenderTarget* pRenderTarget)
+{
+	assert(m_pBitmap != nullptr);
+	pRenderTarget->SetTransform(m_WorldTransform);
+	pRenderTarget->DrawBitmap(m_pBitmap);
+}
+

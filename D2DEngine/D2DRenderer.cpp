@@ -27,7 +27,6 @@ void D2DRenderer::Uninitialize()
 
 void D2DRenderer::Render(BitmapScene* pBitmap)
 {
-	m_pRenderTarget->SetTransform(pBitmap->m_WorldTransform);
-	m_pRenderTarget->DrawBitmap(pBitmap->m_pBitmap);
+	
 }
 
