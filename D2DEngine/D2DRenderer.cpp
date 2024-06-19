@@ -25,8 +25,3 @@ void D2DRenderer::Uninitialize()
 
 }
 
-void D2DRenderer::Render(BitmapScene* pBitmap)
-{
-	
-}
-

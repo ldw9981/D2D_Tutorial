@@ -1,5 +1,6 @@
+#include "framework.h"
 #include "DemoGameApp.h"
-#include "../D2DEngine/D2DRenderer.h"
+
 
 void DemoGameApp::Initialize()
 {
@@ -17,7 +18,9 @@ void DemoGameApp::Update(float fTimeElapsed)
 	
 }
 
-void DemoGameApp::Render()
+void DemoGameApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
 {
-	
+	pRenderTarget->BeginDraw();
+	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
+	pRenderTarget->EndDraw();
 }

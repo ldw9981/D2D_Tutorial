@@ -1,5 +1,5 @@
 #pragma once
-
+#include <d2d1.h>
 
 class BitmapScene;
 class D2DRenderer
@@ -16,9 +16,6 @@ public:
 public:
 	ID2D1Factory* m_pFactory = nullptr;
 	ID2D1HwndRenderTarget* m_pRenderTarget = nullptr;
-
-
-	void Render(BitmapScene* pBitmap);
 };
 
 

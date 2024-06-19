@@ -26,11 +26,9 @@ void WinGameApp::Run()
 		}
 		else
 		{
-			ID2D1HwndRenderTarget* pRenderTarget = m_Renderer.GetRenderTarget();
-			pRenderTarget->BeginDraw();
-			pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
-			Render(pRenderTarget);
-			pRenderTarget->EndDraw();
+			float deltaTime = 0.016f;
+			Update(deltaTime);					
+			Render(m_Renderer.GetRenderTarget());
 		}
 	}
 }
@@ -43,6 +41,8 @@ void WinGameApp::Uninitialize()
 
 void WinGameApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
 {
-
+	pRenderTarget->BeginDraw();
+	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
+	pRenderTarget->EndDraw();
 }
 
