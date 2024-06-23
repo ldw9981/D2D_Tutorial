@@ -13,7 +13,7 @@ ResourceManager::~ResourceManager()
 
 }
 
-void ResourceManager::CreateD2D1BitmapFromFile(const wchar_t* fileName, ID2D1Bitmap** bitmap)
+bool ResourceManager::CreateD2D1BitmapFromFile(std::wstring strFilePath, ID2D1Bitmap** bitmap)
 {
 
 }
@@ -23,7 +23,7 @@ void ResourceManager::ReleaseD2D1Bitmap(ID2D1Bitmap* bitmap)
 
 }
 
-void ResourceManager::CreateAnimationAsset(const wchar_t* fileName, AnimationAsset** asset)
+bool ResourceManager::CreateAnimationAsset(std::wstring strFilePath, AnimationAsset** asset)
 {
 
 }

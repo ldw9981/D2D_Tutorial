@@ -16,9 +16,9 @@ BitmapScene::~BitmapScene()
 		m_pBitmap = nullptr;
 	}
 }
-bool BitmapScene::LoadD2DBitmap(const std::wstring& strFileName)
+void BitmapScene::LoadD2DBitmap(const std::wstring& strFileName)
 {
-	return true;
+	// 리소스 매니저를 통해 비트맵을 로드한다.
 }
 
 void BitmapScene::Update(float fTimeElapsed)

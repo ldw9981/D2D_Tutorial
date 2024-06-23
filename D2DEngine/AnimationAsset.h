@@ -1,8 +1,8 @@
 #pragma once
 #include "ReferenceCounter.h"
 
-// 애니메이션 기본 프레임의 기본 정보
-struct FRAME_INFO
+
+struct FRAME_INFO // 애니메이션 기본 프레임의 기본 정보
 {
 	D2D1_RECT_F		Source;			// 이미지에서 하나의 장면이 어느 영역에 있는지
 	D2D1_VECTOR_2F	Center;			// 하나의 FRAME에서 좌측상단 0,0 기준  중점의 좌표
@@ -38,12 +38,9 @@ struct FRAME_INFO
 	}
 };
 
-/*
-	하나의 동작에 대한 정보
-*/
-struct ANIMATION_INFO
+struct ANIMATION_INFO // 하나의 동작에 대한 정보
 {
-	std::string m_Name; // 애니메이션의 이름	이름으로 검색하여 재생한다.
+	std::string m_Name; // 애니메이션의 이름	
 	std::vector<FRAME_INFO> m_Frames; // 프레임의 모음
 	ANIMATION_INFO()
 		:m_Name("Default")
@@ -52,11 +49,11 @@ struct ANIMATION_INFO
 	}
 };
 
-// 이름을 뭐로하던 애니메이션 정보를 가지고 있는 클래스
+//  애니메이션 정보를 가지고 있는 클래스
 class AnimationAsset : public ReferenceCounter
 {	
 protected:
-	AnimationAsset() {};
+	AnimationAsset() { m_Animations.resize(10); };
 	virtual ~AnimationAsset();
 public:
 	std::vector<ANIMATION_INFO> m_Animations;  // 애니메이션의 모음
@@ -77,4 +74,6 @@ public:
 		}
 		return nullptr;
 	}
+
+	void LoadAnimationFromCSV(int index,const wchar_t* fileName);
 };
