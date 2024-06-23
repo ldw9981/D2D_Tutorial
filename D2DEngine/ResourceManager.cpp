@@ -52,10 +52,45 @@ void ResourceManager::ReleaseD2DBitmap(std::wstring strFilePath)
 
 bool ResourceManager::CreateAnimationAsset(std::wstring strFilePath, AnimationAsset** asset)
 {
-	
+	if (m_AnimationAssetMap.find(strFilePath) != m_AnimationAssetMap.end())
+	{
+		*asset = m_AnimationAssetMap[strFilePath];
+		(*asset)->AddRef();
+		return true;
+	}
+
+	//////////////////////////////////////////////////////////////////////////
+	// 기존과 같은 생성로직. AnimationAsset 생성하여 인터페이스 포인터 받는다.
+	// 여기서는 생략한다.
+
+	AnimationAsset* pTemp = new AnimationAsset;	
+	// 생성한 애니메이션 에셋에 애니메이션 데이터를 로드한다.
+	if (pTemp->LoadAnimation(strFilePath) == false)
+	{
+		delete pTemp;	
+		return false;
+	}
+	else
+	{
+		*asset = pTemp;
+	}
+	// 생성한 애니메이션 에셋을 맵에 저장한다.
+	m_AnimationAssetMap[strFilePath] = *asset;
+	return true;
 }
 
 void ResourceManager::ReleaseAnimationAsset(std::wstring strFilePath)
 {
+	// 맵에 해당 키가 존재하면 애니메이션 에셋을 해제한다.
+	std::map<std::wstring, AnimationAsset*>::iterator iter = m_AnimationAssetMap.find(strFilePath);
+	assert(iter != m_AnimationAssetMap.end()); // 컨테이너에 없으면 Create/Release 짝이 잘못됐다.
 
+	if (iter != m_AnimationAssetMap.end())
+	{
+		AnimationAsset* asset = m_AnimationAssetMap[strFilePath];
+		if (asset->Release() == 0)
+		{
+			m_AnimationAssetMap.erase(iter);
+		}
+	}
 }

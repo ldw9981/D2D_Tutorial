@@ -40,10 +40,11 @@ struct FRAME_INFO // 애니메이션 기본 프레임의 기본 정보
 
 struct ANIMATION_INFO // 하나의 동작에 대한 정보
 {
-	std::string m_Name; // 애니메이션의 이름	
-	std::vector<FRAME_INFO> m_Frames; // 프레임의 모음
+	std::string Name; // 애니메이션의 이름	
+	std::vector<FRAME_INFO> Frames; // 프레임의 모음
+	bool Loop; // 반복 여부
 	ANIMATION_INFO()
-		:m_Name("Default")
+		:Name("Default")
 	{
 
 	}
@@ -52,7 +53,7 @@ struct ANIMATION_INFO // 하나의 동작에 대한 정보
 //  애니메이션 정보를 가지고 있는 클래스
 class AnimationAsset : public ReferenceCounter
 {	
-protected:
+public:
 	AnimationAsset() { m_Animations.resize(10); };
 	virtual ~AnimationAsset();
 public:
@@ -67,7 +68,7 @@ public:
 	{
 		for (auto& iter : m_Animations)
 		{
-			if (iter.m_Name == AnimationName)
+			if (iter.Name == AnimationName)
 			{
 				return &iter;
 			}
@@ -75,5 +76,6 @@ public:
 		return nullptr;
 	}
 
-	void LoadAnimationFromCSV(int index,const wchar_t* fileName);
+	bool LoadAnimation(std::wstring FilePath);
+	bool LoadAnimationFromCSV(int index,const wchar_t* fileName);
 };

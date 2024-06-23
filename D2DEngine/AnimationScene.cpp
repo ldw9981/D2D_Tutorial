@@ -28,8 +28,8 @@ void AnimationScene::Update(float fTimeElapsed)
 	if (m_pAnimationInfo == nullptr)
 		return;
 
-	const FRAME_INFO& Frame = m_pAnimationInfo->m_Frames[m_FrameIndexCurr];
-	size_t MaxFrameCount = m_pAnimationInfo->m_Frames.size();
+	const FRAME_INFO& Frame = m_pAnimationInfo->Frames[m_FrameIndexCurr];
+	size_t MaxFrameCount = m_pAnimationInfo->Frames.size();
 
 	///////////////     
     // m_FrameTime에 fTimeElapsed을 누적시켜  Frame.Duration보다 크면 
