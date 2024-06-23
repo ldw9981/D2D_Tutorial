@@ -10,9 +10,9 @@ public:
 	BitmapScene();
 	virtual ~BitmapScene();
 
-	void LoadD2DBitmap(const std::wstring& strFileName);
+	void LoadD2DBitmap(const std::wstring strFilePath);
 
-	std::wstring m_strFileName;
+	std::wstring m_strBitmapFilePath;
 	ID2D1Bitmap* m_pBitmap = nullptr;	
 	
 

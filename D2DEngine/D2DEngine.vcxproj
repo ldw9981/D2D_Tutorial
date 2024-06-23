@@ -144,6 +144,7 @@
     <ClInclude Include="BitmapScene.h" />
     <ClInclude Include="D2DRenderer.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReferenceCounter.h" />
     <ClInclude Include="ResourceManager.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="BitmapScene.cpp" />
     <ClCompile Include="D2DEngine.cpp" />
     <ClCompile Include="D2DRenderer.cpp" />
+    <ClCompile Include="Helper.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

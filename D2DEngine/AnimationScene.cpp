@@ -11,12 +11,14 @@ AnimationScene::AnimationScene()
 
 AnimationScene::~AnimationScene()
 {
+	// 리소스매니저를 통하여 에셋이름으로 해제한다.
 
 }
 
-void AnimationScene::LoadAnimationAsset(const std::wstring strAssetName)
+void AnimationScene::LoadAnimationAsset(const std::wstring strFilePath)
 {
     // 리소스 매니저를 통해 AnimationAsset을 로드한다.
+	m_strAnimationAssetFilePath = strFilePath;
 }
 
 void AnimationScene::Update(float fTimeElapsed)

@@ -1,11 +1,35 @@
 #include "pch.h"
 #include "WinGameApp.h"
+#include "D2DRenderer.h"
+#include "ResourceManager.h"
+
+WinGameApp::WinGameApp()
+{
+	m_pRenderer = new D2DRenderer;
+	m_pResourceManager = new ResourceManager;
+}
+
+WinGameApp::~WinGameApp()
+{
+	if (m_pResourceManager)
+	{
+		delete m_pResourceManager;
+		m_pResourceManager = nullptr;
+	}
+
+	if (m_pRenderer)
+	{
+		delete m_pRenderer;
+		m_pRenderer = nullptr;
+	}
+}
 
 void WinGameApp::Initialize()
 {
 	// 공통으로 사용하는 윈도우 설정,생성부분을 작성한다.
 
 	// Direct2D초기화를 작성한다.
+	m_pRenderer->Initialize();
 }
 
 void WinGameApp::Run()
@@ -28,7 +52,7 @@ void WinGameApp::Run()
 		{
 			float deltaTime = 0.016f;
 			Update(deltaTime);					
-			Render(m_Renderer.GetRenderTarget());
+			Render(m_pRenderer->GetRenderTarget());
 		}
 	}
 }
@@ -36,6 +60,7 @@ void WinGameApp::Run()
 void WinGameApp::Uninitialize()
 {
 	// Direct2D 해제를 호출한다.
+	m_pRenderer->Uninitialize();
 }
 
 
