@@ -19,5 +19,6 @@ public:
 
 	D2DRenderer* m_pRenderer = nullptr;
 	ResourceManager* m_pResourceManager = nullptr;
+	HWND m_hWnd;
 };
 

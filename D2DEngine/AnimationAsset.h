@@ -55,7 +55,7 @@ class AnimationAsset : public ReferenceCounter
 {	
 public:
 	AnimationAsset() { m_Animations.resize(10); };
-	virtual ~AnimationAsset();
+	virtual ~AnimationAsset() {};
 public:
 	std::vector<ANIMATION_INFO> m_Animations;  // 애니메이션의 모음
 

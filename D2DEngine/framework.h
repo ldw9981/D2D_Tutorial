@@ -15,3 +15,4 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <dxgi1_4.h>

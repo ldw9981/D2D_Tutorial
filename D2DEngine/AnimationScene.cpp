@@ -2,6 +2,7 @@
 #include "AnimationScene.h"
 #include "AnimationAsset.h"
 #include "D2DRenderer.h"
+#include "ResourceManager.h"
 
 
 AnimationScene::AnimationScene()
@@ -12,7 +13,11 @@ AnimationScene::AnimationScene()
 AnimationScene::~AnimationScene()
 {
 	// 리소스매니저를 통하여 에셋이름으로 해제한다.
-
+	if (m_pAnimationInfo)
+	{
+		ResourceManager::pInstance->ReleaseAnimationAsset(m_strAnimationAssetFilePath);
+		m_pAnimationInfo = nullptr;
+	}
 }
 
 void AnimationScene::LoadAnimationAsset(const std::wstring strFilePath)

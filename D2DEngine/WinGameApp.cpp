@@ -29,7 +29,7 @@ void WinGameApp::Initialize()
 	// 공통으로 사용하는 윈도우 설정,생성부분을 작성한다.
 
 	// Direct2D초기화를 작성한다.
-	m_pRenderer->Initialize();
+	m_pRenderer->Initialize(m_hWnd);
 }
 
 void WinGameApp::Run()
