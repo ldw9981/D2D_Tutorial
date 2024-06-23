@@ -16,7 +16,7 @@ BitmapScene::~BitmapScene()
 		m_pBitmap = nullptr;
 	}
 }
-bool BitmapScene::Load(const std::wstring& strFileName)
+bool BitmapScene::LoadD2DBitmap(const std::wstring& strFileName)
 {
 	return true;
 }

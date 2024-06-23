@@ -10,10 +10,11 @@ public:
 	BitmapScene();
 	virtual ~BitmapScene();
 
-	bool Load(const std::wstring& strFileName);
+	bool LoadD2DBitmap(const std::wstring& strFileName);
 
 	std::wstring m_strFileName;
-	ID2D1Bitmap* m_pBitmap = nullptr;
+	ID2D1Bitmap* m_pBitmap = nullptr;	
+	
 
 	void Update(float fTimeElapsed);
 	void Render(ID2D1HwndRenderTarget* pRenderTarget);
