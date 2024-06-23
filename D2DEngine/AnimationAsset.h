@@ -6,7 +6,7 @@ struct FRAME_INFO
 {
 	D2D1_RECT_F		Source;			// 이미지에서 하나의 장면이 어느 영역에 있는지
 	D2D1_VECTOR_2F	Center;			// 하나의 FRAME에서 좌측상단 0,0 기준  중점의 좌표
-	FLOAT			RenderTime;		// 하나의 장면을 그릴 시간
+	FLOAT			Duration;		// 하나의 장면을 그릴 시간
 
 	FRAME_INFO()
 	{
@@ -14,7 +14,7 @@ struct FRAME_INFO
 		Source.top = 0;
 		Source.right = 0;
 		Source.bottom = 0;
-		RenderTime = 0;
+		Duration = 0;
 		Center.x = 0;
 		Center.y = 0;
 	}
@@ -27,14 +27,14 @@ struct FRAME_INFO
 		Source.bottom = bottom;
 		Center.x = centerX;
 		Center.y = centerY;
-		RenderTime = time;
+		Duration = time;
 	}
 	FRAME_INFO(D2D1_RECT_F rect, float centerX, float centerY, float time)
 	{
 		Source = rect;
 		Center.x = centerX;
 		Center.y = centerY;
-		RenderTime = time;
+		Duration = time;
 	}
 };
 
