@@ -10,6 +10,6 @@ public:
 	// 부모 클래스의 함수가 virtual 이 아니면 컴파일 에러.
 	virtual void Initialize() override;
 	virtual void Update(float fTimeElapsed) override;
-	virtual void Render() override;
+	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget) override;
 	
 };

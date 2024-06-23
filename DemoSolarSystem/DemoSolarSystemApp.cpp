@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "framework.h"
 #include "DemoSolarSystemApp.h"
 #include "../D2DEngine/BitmapScene.h"
 
@@ -31,6 +31,8 @@ void DemoSolarSystemApp::Update(float fTimeElapsed)
 void DemoSolarSystemApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
 {
 	// 이후에 할일을 작성한다. 예 게임 렌더링
+	pRenderTarget->BeginDraw();
+	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
 	m_Sun.Render(pRenderTarget);
-	
+	pRenderTarget->EndDraw();
 }
