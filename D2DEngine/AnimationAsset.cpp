@@ -6,6 +6,14 @@ bool AnimationAsset::LoadAnimation(std::wstring FilePath)
 {
 	//텍스트 파일을 열어서 csv파일 목록을 읽어온다.
 	// 아래 함수로 csv파일을 처리한다.
+	if (FilePath == std::wstring(L"Background"))
+	{
+		
+	}
+	if (FilePath == std::wstring(L"Run"))
+	{
+
+	}
 	return true;
 }
 
