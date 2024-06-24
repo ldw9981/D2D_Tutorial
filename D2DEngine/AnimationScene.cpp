@@ -13,10 +13,10 @@ AnimationScene::AnimationScene()
 AnimationScene::~AnimationScene()
 {
 	// 리소스매니저를 통하여 에셋이름으로 해제한다.
-	if (m_pAnimationInfo)
+	if (m_pAnimationAsset)
 	{
 		ResourceManager::pInstance->ReleaseAnimationAsset(m_strAnimationAssetFilePath);
-		m_pAnimationInfo = nullptr;
+		m_pAnimationAsset = nullptr;
 	}
 }
 
