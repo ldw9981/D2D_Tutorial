@@ -5,22 +5,18 @@
     Render에서 유용한 매크로나 함수를 정의한다.
 */
 #define SAFE_RELEASE(p) \
-{ \
 	if(p) \
 	{ \
 		p->Release(); \
 		p = nullptr; \
 	} \
-}
 
 #define SAFE_DELETE(p) \
-{ \
 	if(p) \
 	{ \
 		delete p; \
 		p = nullptr; \
 	} \
-
 
 #define LOG_ERROR(...) \
 { \

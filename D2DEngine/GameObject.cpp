@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "GameObject.h"
+#include "Component.h"
+#include "Scene.h"
 
 GameObject::GameObject()
 {
@@ -8,15 +10,28 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-
+	for (auto& pComponent : m_OwnedComponents)
+	{
+		delete pComponent;
+	}
+	m_OwnedComponents.clear();
 }
 
 void GameObject::Update(float deltaTime)
 {
-
+	for (auto& pComponent : m_OwnedComponents)
+	{
+		pComponent->Update(deltaTime);
+	}
+	
+	if(m_pRootScene)
+		m_BoundBox.m_Center = m_pRootScene->GetWorldLocation();
 }
 
 void GameObject::Render(ID2D1RenderTarget* pRenderTarget)
 {
-
+	for (auto& pComponent : m_OwnedComponents)
+	{	
+		pComponent->Render(pRenderTarget);
+	}
 }

@@ -1,9 +1,9 @@
 #pragma once
-class Character
+class TestCharacter
 {
 public:
-	Character();
-	virtual ~Character(); // 파괴자에는 왜? virtual을 붙일까??
+	TestCharacter();
+	virtual ~TestCharacter(); // 파괴자에는 왜? virtual을 붙일까??
 
 	int m_HP=100;	
 

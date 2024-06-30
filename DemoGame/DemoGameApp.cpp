@@ -18,7 +18,7 @@ void DemoGameApp::Update(float fTimeElapsed)
 	
 }
 
-void DemoGameApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
+void DemoGameApp::Render(ID2D1RenderTarget* pRenderTarget)
 {
 	pRenderTarget->BeginDraw();
 	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));

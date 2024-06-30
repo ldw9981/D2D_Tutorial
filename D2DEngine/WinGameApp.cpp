@@ -2,26 +2,29 @@
 #include "WinGameApp.h"
 #include "D2DRenderer.h"
 #include "ResourceManager.h"
+#include "World.h"
+#include "Helper.h"
 
 WinGameApp::WinGameApp()
 {
 	m_pRenderer = new D2DRenderer;
 	m_pResourceManager = new ResourceManager;
+	m_pWorld = new World; // Default World
 }
 
 WinGameApp::~WinGameApp()
-{
-	if (m_pResourceManager)
+{	
+	// 메모리 해제
+	/*
+	if (m_pWorld)
 	{
-		delete m_pResourceManager;
-		m_pResourceManager = nullptr;
+		delete m_pWorld;
+		m_pWorld = nullptr;
 	}
-
-	if (m_pRenderer)
-	{
-		delete m_pRenderer;
-		m_pRenderer = nullptr;
-	}
+	*/
+	SAFE_DELETE(m_pWorld);
+	SAFE_DELETE(m_pResourceManager);	
+	SAFE_DELETE(m_pRenderer);
 }
 
 void WinGameApp::Initialize()
@@ -64,10 +67,16 @@ void WinGameApp::Uninitialize()
 }
 
 
-void WinGameApp::Render(ID2D1HwndRenderTarget* pRenderTarget)
+void WinGameApp::Update(float fTimeElapsed)
+{
+	m_pWorld->Update(fTimeElapsed);
+}
+
+void WinGameApp::Render(ID2D1RenderTarget* pRenderTarget)
 {
 	pRenderTarget->BeginDraw();
 	pRenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::CadetBlue));
+	m_pWorld->Render(pRenderTarget);
 	pRenderTarget->EndDraw();
 }
 

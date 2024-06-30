@@ -15,6 +15,13 @@ public:
 
 	// RelativeTransform과 	m_WorldTransform을 계산한다.
 	void UpdateTrasnform();
-	void SetParent(Scene* pParentScene) { m_pParentScene = pParentScene; }
+	void SetParentScene(Scene* pParentScene) { m_pParentScene = pParentScene; }
+	D2D1_VECTOR_2F GetWorldLocation()
+	{
+		D2D1_VECTOR_2F out;
+		out.x = m_WorldTransform._31;
+		out.y = m_WorldTransform._32;
+		return out;
+	}
 };
 

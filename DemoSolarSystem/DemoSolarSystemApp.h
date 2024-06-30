@@ -9,7 +9,7 @@ public:
 	~DemoSolarSystemApp();
 
 	virtual void Initialize() override;	
-	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget) override;
+	virtual void Render(ID2D1RenderTarget* pRenderTarget) override;
 	virtual void Update(float fTimeElapsed) override;
 
 	BitmapScene m_Sun;

@@ -1,6 +1,7 @@
 #pragma once
 #include "BitmapScene.h"
 
+
 class AnimationAsset;
 struct ANIMATION_INFO;
 
@@ -30,8 +31,8 @@ public:
 	D2D1_MATRIX_3X2_F	m_ImageTransform;	// 반대 방향으로 뒤집기 위한 행렬 Scale.x = -1.0f 
 
 	void LoadAnimationAsset(const std::wstring strFilePath);
-	void Update(float fTimeElapsed);
-	void Render(ID2D1HwndRenderTarget* pRenderTarget);	
+	virtual void Update(float fTimeElapsed);
+	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);	
 	void SetAnimation(int index,bool mirror);
 };
 

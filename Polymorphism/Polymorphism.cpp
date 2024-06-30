@@ -9,7 +9,7 @@
 
 int main()
 {
-    Character character;
+    TestCharacter character;
     TestClass test;
     Player  player;
     Enemy   enemy;
@@ -24,7 +24,7 @@ int main()
     enemy.Attack();
 
     std::cout << "부모클래스 타입의 포인터변수에 인스턴스 주소를 지정하고 Attack 함수를 호출합니다. !\n";
-    Character* pCharacter = nullptr;
+    TestCharacter* pCharacter = nullptr;
     pCharacter = &player;
     pCharacter->Attack();
 

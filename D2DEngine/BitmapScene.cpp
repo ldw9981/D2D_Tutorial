@@ -36,7 +36,7 @@ void BitmapScene::Update(float fTimeElapsed)
 	UpdateTrasnform();
 }
 
-void BitmapScene::Render(ID2D1HwndRenderTarget* pRenderTarget)
+void BitmapScene::Render(ID2D1RenderTarget* pRenderTarget)
 {
 	assert(m_pBitmap != nullptr);
 	pRenderTarget->SetTransform(m_WorldTransform);

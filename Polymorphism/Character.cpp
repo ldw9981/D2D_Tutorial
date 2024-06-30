@@ -1,27 +1,27 @@
 #include "Character.h"
 #include <iostream>
 
-Character::Character()
+TestCharacter::TestCharacter()
 {
 	std::cout << __FUNCTION__  << std::endl;
 }
 
-Character::~Character()
+TestCharacter::~TestCharacter()
 {
 	std::cout << __FUNCTION__ << std::endl;
 }
 
-void Character::Jump()
+void TestCharacter::Jump()
 {
 	std::cout << __FUNCTION__ << std::endl;
 }
 
-void Character::Damage(int _Damage)
+void TestCharacter::Damage(int _Damage)
 {
 	m_HP -= _Damage;
 }
 
-void Character::Attack()
+void TestCharacter::Attack()
 {
 	std::cout << __FUNCTION__ << std::endl;
 }

@@ -1,10 +1,10 @@
 #pragma once
 #include "Scene.h"
-
+#include "Component.h"
 
 class D2DRenderer;
 class BitmapScene :
-	public Scene
+	public Scene, public Component
 {
 public:
 	BitmapScene();
@@ -16,8 +16,8 @@ public:
 	ID2D1Bitmap* m_pBitmap = nullptr;	
 	
 
-	void Update(float fTimeElapsed);
-	void Render(ID2D1HwndRenderTarget* pRenderTarget);
+	virtual void Update(float fTimeElapsed);
+	virtual void Render(ID2D1RenderTarget* pRenderTarget);
 };
 
 

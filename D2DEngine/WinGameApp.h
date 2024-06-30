@@ -3,6 +3,7 @@
 
 class ResourceManager;
 class D2DRenderer;
+class World;
 class WinGameApp
 {
 public:
@@ -14,11 +15,12 @@ public:
 	virtual void Run();
 	virtual void Uninitialize();
 
-	virtual void Update(float fTimeElapsed) {};
-	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);
+	virtual void Update(float fTimeElapsed);
+	virtual void Render(ID2D1RenderTarget* pRenderTarget);
 
 	D2DRenderer* m_pRenderer = nullptr;
 	ResourceManager* m_pResourceManager = nullptr;
+	World* m_pWorld = nullptr;
 	HWND m_hWnd;
 };
 
