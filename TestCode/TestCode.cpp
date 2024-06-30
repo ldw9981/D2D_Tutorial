@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include "TestVectorAndClass.h"
+#include "TestVectorInt.h"
 
 int main()
 {
-    mainTestVectorAndClass();
+    TestVectorInt();
 }
 

@@ -10,6 +10,7 @@
 #include <d2d1helper.h>
 #include <string>
 #include <vector>
+#include <list>
 #include <assert.h>
 #include <iostream>
 #include <fstream>

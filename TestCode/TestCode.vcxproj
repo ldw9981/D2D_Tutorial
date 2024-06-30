@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="TestCode.cpp" />
     <ClCompile Include="TestVectorAndClass.cpp" />
+    <ClCompile Include="TestVectorInt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestVectorAndClass.h" />
+    <ClInclude Include="TestVectorInt.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

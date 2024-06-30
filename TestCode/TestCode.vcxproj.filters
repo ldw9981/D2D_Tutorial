@@ -21,9 +21,15 @@
     <ClCompile Include="TestVectorAndClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TestVectorInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestVectorAndClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestVectorInt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
