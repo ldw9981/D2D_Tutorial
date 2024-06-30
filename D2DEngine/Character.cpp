@@ -5,7 +5,7 @@
 
 Character::Character()
 {
-	m_pAnimationScene = new AnimationScene;
+	m_pAnimationScene = CreateComponent<AnimationScene>();
 	SetRootScene(m_pAnimationScene);
 
 	// 충돌박스를 나중에 사용한다면 박스가 따라다니게 한다.
@@ -14,5 +14,5 @@ Character::Character()
 
 Character::~Character()
 {
-	SAFE_DELETE(m_pAnimationScene);
+
 }

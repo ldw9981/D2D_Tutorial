@@ -7,7 +7,6 @@ World::World()
 	// 화면크기 정보를 가져와서
 	float width = 640;
 	float height = 480;
-
 	m_CullingBoundDefault.SetExtent(width/2, height/2);
 	m_CullingBoundDefault.SetCenter(0,0);
 	SetCullingBound(&m_CullingBoundDefault);	
