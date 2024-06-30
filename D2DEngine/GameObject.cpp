@@ -35,3 +35,9 @@ void GameObject::Render(ID2D1RenderTarget* pRenderTarget)
 		pComponent->Render(pRenderTarget);
 	}
 }
+
+void GameObject::AddComponent(Component* pComponent)
+{
+	pComponent->SetOwner(this);
+	m_OwnedComponents.push_back(pComponent);
+}

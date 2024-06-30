@@ -19,6 +19,7 @@ public:
 	void Render(ID2D1RenderTarget* pRenderTarget);
 	void SetRootScene(Scene* pRootComponent) { m_pRootScene = pRootComponent; }	
 	const AABB& GetBoundBox() const { return m_BoundBox; }
+	void AddComponent(Component* pComponent);
 
 	// 컴포넌트 를 템틀릿 함수로 생성합니다.
 	template<typename T>
@@ -27,8 +28,7 @@ public:
 		bool bIsBase = std::is_base_of<Component, T>::value;
 		assert(bIsBase == true);
 		T* pComponent = new T();
-		pComponent->SetOwner(this);
-		m_OwnedComponents.push_back(pComponent);
+		AddComponent(pComponent);
 		return pComponent;
 	}
 };
