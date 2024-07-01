@@ -41,3 +41,12 @@ void GameObject::AddComponent(Component* pComponent)
 	pComponent->SetOwner(this);
 	m_OwnedComponents.push_back(pComponent);
 }
+
+D2D1_VECTOR_2F GameObject::GetWorldLocation()
+{ 
+	D2D1_VECTOR_2F temp{ 0,0 };
+	if (m_pRootScene)
+		temp = m_pRootScene->GetWorldLocation();
+
+	return temp;
+}
