@@ -4,7 +4,7 @@
 
 class D2DRenderer;
 class BitmapScene :
-	public Scene, public Component
+	public Scene
 {
 public:
 	BitmapScene();

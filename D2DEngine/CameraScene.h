@@ -4,7 +4,7 @@
 #include "Component.h"
 
 class CameraScene :
-    public Scene, public Component
+    public Scene
 {
 public:
 	CameraScene();

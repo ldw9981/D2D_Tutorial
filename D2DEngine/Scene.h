@@ -1,5 +1,7 @@
 #pragma once
-class Scene
+#include "Component.h"
+
+class Scene : public Component
 {
 public:
 	Scene();
@@ -23,5 +25,7 @@ public:
 		out.y = m_WorldTransform._32;
 		return out;
 	}
+
+	virtual void Update(float deltaTime);
 };
 
