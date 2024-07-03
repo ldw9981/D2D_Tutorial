@@ -11,7 +11,7 @@
 
 D2DRenderer::D2DRenderer()
 {
-
+	Instance = this;
 }
 
 D2DRenderer::~D2DRenderer()
@@ -20,6 +20,8 @@ D2DRenderer::~D2DRenderer()
 }
 
 D2D1_MATRIX_3X2_F D2DRenderer::m_CameraTransform = D2D1::Matrix3x2F::Identity();
+
+D2DRenderer* D2DRenderer::Instance = nullptr;
 
 void D2DRenderer::Initialize(HWND hWnd)
 {
@@ -51,7 +53,7 @@ void D2DRenderer::Initialize(HWND hWnd)
 
 	if (SUCCEEDED(hr))
 	{
-		hr = m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &m_pBrush);
+		hr = m_pRenderTarget->CreateSolidColorBrush(D2D1::ColorF(D2D1::ColorF::Black), &m_pBrushRed);
 	}
 
 	if (SUCCEEDED(hr))
@@ -102,7 +104,7 @@ void D2DRenderer::Initialize(HWND hWnd)
 
 void D2DRenderer::Uninitialize()
 {
-	SAFE_RELEASE(m_pBrush);
+	SAFE_RELEASE(m_pBrushRed);
 	SAFE_RELEASE(m_pRenderTarget);
 	SAFE_RELEASE(m_pD2DFactory);
 	SAFE_RELEASE(m_pWICFactory);

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Scene.h"
-
+#include "D2DRenderer.h"
 
 Scene::Scene()
 {
@@ -27,4 +27,13 @@ void Scene::UpdateTrasnform()
 void Scene::Update(float deltaTime)
 {
 	UpdateTrasnform();
+}
+
+
+void Scene::Render(ID2D1RenderTarget* pRenderTarget)
+{
+#if _DEBUG	
+	pRenderTarget->SetTransform(m_WorldTransform);
+	pRenderTarget->DrawRectangle(D2D1::RectF(-2, -2, 2, 2), D2DRenderer::Instance->m_pBrushRed);	
+#endif // _DEBUG
 }

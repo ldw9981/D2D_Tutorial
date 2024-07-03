@@ -12,10 +12,11 @@ public:
 	Component();
 	virtual ~Component();
 
-	GameObject* m_pOwner;
+	GameObject* m_pOwner = nullptr;
 
 public:
-	
+
+	GameObject* GetOwner() { return m_pOwner; }
 	void SetOwner(GameObject* pOwner) { m_pOwner = pOwner; }
 
 	virtual void Update(float deltaTime);

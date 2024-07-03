@@ -14,6 +14,7 @@ public:
 	D2D_VECTOR_2F 		m_RelativeLocation = {0,0}; // 상대 위치
 	D2D_MATRIX_3X2_F	m_RelativeTransform; // 상대 복합 변환
 	D2D_MATRIX_3X2_F	m_WorldTransform;    // 부모까지 반영된 최종 변환
+	
 
 	// RelativeTransform과 	m_WorldTransform을 계산한다.
 	void UpdateTrasnform();
@@ -27,5 +28,6 @@ public:
 	}
 
 	virtual void Update(float deltaTime);
+	virtual void Render(ID2D1RenderTarget* pRenderTarget);
 };
 
