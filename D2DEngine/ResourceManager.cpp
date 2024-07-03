@@ -30,6 +30,8 @@ bool ResourceManager::CreateD2DBitmapFromFile(std::wstring strFilePath, ID2D1Bit
 	// 여기서는 생략한다.
 	
 	// 생성한 비트맵을 맵에 저장한다.
+
+//	m_BitmapMap.insert(make_pair(strFilePath, *bitmap));
 	m_BitmapMap[strFilePath] = *bitmap; 
 	return true;
 }
@@ -75,6 +77,7 @@ bool ResourceManager::CreateAnimationAsset(std::wstring strFilePath, AnimationAs
 		*asset = pTemp;
 	}
 	// 생성한 애니메이션 에셋을 맵에 저장한다.
+	//	m_AnimationAssetMap.insert(make_pair(strFilePath, *asset));
 	m_AnimationAssetMap[strFilePath] = *asset;
 	return true;
 }
