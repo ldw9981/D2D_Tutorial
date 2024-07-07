@@ -20,6 +20,11 @@ AnimationScene::~AnimationScene()
 	}
 }
 
+bool AnimationScene::IsAnimationEnd()
+{
+	return m_bAnimationEnd;
+}
+
 void AnimationScene::LoadAnimationAsset(const std::wstring strFilePath)
 {
     // 리소스 매니저를 통해 AnimationAsset을 로드한다.
@@ -44,8 +49,12 @@ void AnimationScene::Update(float fTimeElapsed)
 
 
 	// 마지막 프레임으로 번호가 변할때 단한번 이벤트 호출
-	if (m_FrameIndexCurr != m_FrameIndexPrev && m_FrameIndexCurr == (MaxFrameCount - 1))
+	if (m_FrameIndexCurr != m_FrameIndexPrev	// 이전 프레임과 현재 프레임이 다르고
+		&& m_FrameIndexCurr == (MaxFrameCount - 1)  // 현재 프레임이 마지막 프레임이라면
+		&& m_FrameTime >= Frame.Duration)	// 현재 프레임의 시간이 Duration보다 크다면
 	{
+		m_bAnimationEnd = true;
+
         if (m_pAnimationProcesser !=nullptr)	// IAnimationProcesser를 구현한 클래스의 인스턴스 주소를 설정했다면
 			m_pAnimationProcesser->OnAnimationEnd(this, m_pAnimationInfo->Name);
 	}
@@ -88,4 +97,5 @@ void AnimationScene::SetAnimation(int index,bool mirror)
 	m_FrameIndexCurr = 0;
 	m_FrameIndexPrev = 0;
 	m_FrameTime = 0.0f;
+	m_bAnimationEnd = false;
 }

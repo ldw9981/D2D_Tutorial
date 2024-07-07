@@ -34,12 +34,13 @@ public:
 	int m_FrameIndexCurr = -1;		// 현재 프레임 인덱스
 	int m_FrameIndexPrev = -1;		// 이전 프레임 인덱스
 	int m_AnimationIndex = -1;	// 현재 애니메이션 인덱스
+	bool m_bAnimationEnd = false;	// 애니메이션 종료 여부
 	D2D1_RECT_F m_SrcRect;		// D2D1Bitmap의 Source 영역
 	D2D1_RECT_F m_DstRect;		// RenderTarget의 Destination 영역		
 
 	bool m_bMirror;				// 좌우 반전 여부
 	
-
+	bool IsAnimationEnd();		// 애니메이션 종료 여부
 	void LoadAnimationAsset(const std::wstring strFilePath);
 	virtual void Update(float fTimeElapsed);
 	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);	
