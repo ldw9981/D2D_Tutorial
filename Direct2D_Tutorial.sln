@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoResourceSharing", "Demo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoObjectCulling", "DemoObjectCulling\DemoObjectCulling.vcxproj", "{D322778D-620A-4334-A41B-E409D49097DA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DemoFiniteStateMachine", "DemoFiniteStateMachine\DemoFiniteStateMachine.vcxproj", "{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{D322778D-620A-4334-A41B-E409D49097DA}.Release|x64.Build.0 = Release|x64
 		{D322778D-620A-4334-A41B-E409D49097DA}.Release|x86.ActiveCfg = Release|Win32
 		{D322778D-620A-4334-A41B-E409D49097DA}.Release|x86.Build.0 = Release|Win32
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Debug|x64.ActiveCfg = Debug|x64
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Debug|x64.Build.0 = Debug|x64
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Debug|x86.Build.0 = Debug|Win32
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Release|x64.ActiveCfg = Release|x64
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Release|x64.Build.0 = Release|x64
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Release|x86.ActiveCfg = Release|Win32
+		{B42D732D-5B93-48EC-BE2E-F50CBD28F6DA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

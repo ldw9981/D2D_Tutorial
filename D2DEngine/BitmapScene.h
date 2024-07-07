@@ -1,10 +1,11 @@
 #pragma once
 #include "Scene.h"
 #include "Component.h"
+#include "RenderScene.h"
 
 class D2DRenderer;
 class BitmapScene :
-	public Scene
+	public RenderScene
 {
 public:
 	BitmapScene();

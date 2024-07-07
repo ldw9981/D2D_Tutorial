@@ -8,7 +8,7 @@ public:
 	D2DRenderer();
 	~D2DRenderer();
 
-	static D2D1_MATRIX_3X2_F m_CameraTransform;		// 카메라의 좌표계로 변환하는 카메라 월드의 역행렬
+	static D2D1_MATRIX_3X2_F m_CameraWorldInverse;		// 카메라의 좌표계로 변환하는 카메라 월드의 역행렬
 	static D2DRenderer* Instance;					// 싱글톤 인스턴스
 
 	void Initialize(HWND hWnd);

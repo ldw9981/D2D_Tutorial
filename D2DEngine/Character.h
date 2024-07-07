@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "Movement.h"
 
 class AnimationScene;
 class Character :
@@ -11,5 +12,6 @@ public:
 	
 	AnimationScene* m_pAnimationScene = nullptr;
 	//CollisionBox* m_pCollisionBox = nullptr;
+	Movement* m_pMovement = nullptr;
 };
 

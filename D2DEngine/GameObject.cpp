@@ -31,7 +31,7 @@ void GameObject::Update(float deltaTime)
 void GameObject::Render(ID2D1RenderTarget* pRenderTarget)
 {
 	for (auto& pComponent : m_OwnedComponents)
-	{	
+	{
 		pComponent->Render(pRenderTarget);
 	}
 }

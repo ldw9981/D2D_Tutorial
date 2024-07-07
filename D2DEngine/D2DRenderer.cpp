@@ -19,7 +19,7 @@ D2DRenderer::~D2DRenderer()
 
 }
 
-D2D1_MATRIX_3X2_F D2DRenderer::m_CameraTransform = D2D1::Matrix3x2F::Identity();
+D2D1_MATRIX_3X2_F D2DRenderer::m_CameraWorldInverse = D2D1::Matrix3x2F::Identity();
 
 D2DRenderer* D2DRenderer::Instance = nullptr;
 
