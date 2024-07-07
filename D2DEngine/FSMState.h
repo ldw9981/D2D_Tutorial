@@ -23,18 +23,14 @@ public:
 	std::string m_Name;
 	FiniteStateMachine* m_pOwner;
 
-	std::vector<FSMTransition*> m_Transitions;
+	
 public:
 	void SetOwner(FiniteStateMachine* pOwner) { m_pOwner = pOwner; }
-
-	//체크할 Transition 인터스턴스를 등록한다.
-	void AddTransition(FSMTransition* pTransition) { m_Transitions.push_back(pTransition); }
-
-	virtual bool CheckTransition(std::string& OutNextState);
+	
 	const std::string& GetName() { return m_Name; }
 
 	virtual void Enter() = 0;	// 상태 진입전 실행할 내용
-	virtual void Update(float DeltaTime) = 0; // 상태 일때 계속 실행할 내용
+	virtual void Update(float DeltaTime)=0; // 상태 일때 계속 실행할 내용, 전이 조건 검사 (Check Transition Condition) 도 같이 한다.
 	virtual void Exit() = 0;	// 상태 탈출때 실행할 내용
 };
 

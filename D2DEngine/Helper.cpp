@@ -4,7 +4,7 @@
 #include <locale>
 #include <codecvt>
 
-namespace D2DHelper
+namespace Helper
 {
 
 	D2D1_VECTOR_2F AddVector(const D2D1_VECTOR_2F& a, const D2D1_VECTOR_2F& b)
