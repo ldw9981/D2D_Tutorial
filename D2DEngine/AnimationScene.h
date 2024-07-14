@@ -45,5 +45,6 @@ public:
 	virtual void Update(float fTimeElapsed);
 	virtual void Render(ID2D1HwndRenderTarget* pRenderTarget);	
 	void SetAnimation(int index,bool mirror);
+	void SetAnimationProcesser(IAnimationProcesser* pAnimationProcesser) { m_pAnimationProcesser = pAnimationProcesser; }
 };
 
