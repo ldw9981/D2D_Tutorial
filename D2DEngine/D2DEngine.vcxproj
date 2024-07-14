@@ -145,6 +145,7 @@
     <ClInclude Include="BitmapScene.h" />
     <ClInclude Include="CameraScene.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="D2DRenderer.h" />
     <ClInclude Include="FiniteStateMachine.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="MathHelper.h" />
+    <ClInclude Include="SideMovement.h" />
     <ClInclude Include="WinGameApp.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -169,6 +171,7 @@
     <ClCompile Include="BitmapScene.cpp" />
     <ClCompile Include="CameraScene.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="D2DEngine.cpp" />
     <ClCompile Include="D2DRenderer.cpp" />
@@ -188,6 +191,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="MathHelper.cpp" />
+    <ClCompile Include="SideMovement.cpp" />
     <ClCompile Include="WinGameApp.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>

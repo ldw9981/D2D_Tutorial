@@ -81,6 +81,12 @@
     <ClInclude Include="RenderScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="SideMovement.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="D2DEngine.cpp">
@@ -147,6 +153,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="RenderScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SideMovement.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
