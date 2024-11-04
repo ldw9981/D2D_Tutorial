@@ -17,6 +17,7 @@ public:
 	ID2D1Factory* GetFactory() { return m_pD2DFactory; }
 	ID2D1HwndRenderTarget* GetRenderTarget() { return m_pRenderTarget; }
 	size_t GetUsedVRAM();
+	size_t GetSystemMemory();
 public:
 	ID2D1Factory* m_pD2DFactory;		// D2D 개체 인터페이스 포인터 변수
 	ID2D1HwndRenderTarget* m_pRenderTarget;

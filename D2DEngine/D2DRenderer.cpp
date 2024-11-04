@@ -2,6 +2,7 @@
 #include "D2DRenderer.h"
 #include "BitmapScene.h"
 #include "Helper.h"
+#include <Psapi.h>
 
 #pragma comment(lib, "d2d1.lib")
 #pragma	comment(lib, "dwrite.lib")
@@ -120,5 +121,14 @@ size_t D2DRenderer::GetUsedVRAM()
 	DXGI_QUERY_VIDEO_MEMORY_INFO videoMemoryInfo;
 	m_pDXGIAdapter->QueryVideoMemoryInfo(0, DXGI_MEMORY_SEGMENT_GROUP_LOCAL, &videoMemoryInfo);
 	return videoMemoryInfo.CurrentUsage / 1024 / 1024;
+}
+
+size_t D2DRenderer::GetSystemMemory()
+{
+	HANDLE hProcess = GetCurrentProcess();
+	PROCESS_MEMORY_COUNTERS_EX pmc;
+	pmc.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX);
+	GetProcessMemoryInfo(hProcess, (PROCESS_MEMORY_COUNTERS*)&pmc, sizeof(pmc));
+	return pmc.PrivateUsage / 1024 / 1024;
 }
 
